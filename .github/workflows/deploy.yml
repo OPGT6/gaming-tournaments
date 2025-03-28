@@ -22,16 +22,12 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          VITE_SUPABASE_URL: 'https://uclokpcfaulptrtysvho.supabase.co'
-          VITE_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjbG9rcGNmYXVscHRydHlzdmhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxMjI4MjYsImV4cCI6MjA1ODY5ODgyNn0.K0HtGPQtdzPqZeTUPAsv3Oa4cYM5uQfpbhLOzDAFPMk'
-          VITE_STRIPE_PUBLISHABLE_KEY: 'pk_test_51R7QYGCYV9AhCec1FuZbZva50C5MFHVGNxTU50nPuYjc1e9cqe7laKkHe56Dl7tYJ1nSF1WM1k6ixsZZB5Z7ZazQ00dZvpNX5P'
 
-      - name: Deploy to Hostinger
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
+          local-dir: ./dist/
           server-dir: /public_html/
