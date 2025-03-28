@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import GamesList from "@/components/GamesList";
+import TournamentList from "@/components/TournamentList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="container mx-auto px-4">
         <Hero />
         <GamesList />
+        <TournamentList />
       </main>
     </div>
   );
